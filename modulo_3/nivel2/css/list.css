@@ -1,0 +1,41 @@
+table {
+    border: 1px solid gray;
+    border-collapse: collapse;
+    font-family: 'Open Sans';
+}
+
+table > thead > tr {
+    background: whitesmoke;
+}
+
+table td, table th {
+    padding: 5px;
+}
+
+button {
+    background: white;
+    border: 1px solid #888;
+    margin-top: 10px;
+    padding: 4px;
+    cursor: pointer;
+}
+
+a:link {
+    text-decoration:none;
+}
+
+.excluir:link {
+    color:#ff0000;
+}
+
+.editar:link {
+    color:#116e25;
+}
+
+a.excluir:visited {
+    color:#ff0000;
+}
+
+a.editar:visited {
+    color:#116e25;
+}
