@@ -17,7 +17,7 @@ class ProdutoGateway
         return $result->fetchObject($class);
     }
 
-    public function all($filter, $class = 'stdClass')
+    public function all($filter = false, $class = 'stdClass')
     {
         $sql = "SELECT * FROM produto ";
         if ($filter) {
@@ -52,12 +52,25 @@ class ProdutoGateway
                  '{$data->data_cadastro}',
                  '{$data->origem}')";
         } else {
-            $sql = "";
+            $sql = "UPDATE produto SET 
+                descricao = '{$data->descricao}',
+                estoque = '{$data->estoque}',
+                preco_custo = '{$data->preco_custo}',
+                preco_venda = '{$data->preco_venda}',
+                codigo_barras = '{$data->codigo_barras}',
+                data_cadastro = '{$data->data_cadastro}',
+                origem = '{$data->origem}'
+                WHERE id =  '{$data->id}'";
         }
+        print "$sql <br>";
+        return self::$conn->exec($sql);
     }
 
     public function getLastId()
     {
-        return 0;
+        $sql = "SELECT max(id) as max FROM produto";
+        $result = self::$conn->query($sql);
+        $data = $result->fetchObject();
+        return $data->max;
     }
 }
