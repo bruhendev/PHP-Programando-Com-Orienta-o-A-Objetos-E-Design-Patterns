@@ -3,6 +3,11 @@ class Produto
 {
     private $data;
 
+    public static function setConnection(PDO $conn)
+    {
+        ProdutoGateway::setConnection($conn);
+    }
+
     public function __get($prop)
     {
         return $this->data[$prop];
@@ -13,34 +18,38 @@ class Produto
         $this->data[$prop] = $value;
     }
 
-    public function find($id)
+    public static function find($id)
     {
-        # code...
+        $gw = new ProdutoGateway;
+        return $gw->find($id);
     }
 
-    public function all($filter = false)
+    public static function all($filter = false)
     {
-        # code...
+        $gw = new ProdutoGateway;
+        return $gw->all($filter, 'Produto');
     }
 
     public function delete()
     {
-        # code...
+        $gw = new ProdutoGateway;
+        return $gw->delete($this->id);
     }
 
     public function save()
     {
-        # code...
+        $gw = new ProdutoGateway;
+        return $gw->save((object) $this->data);
     }
 
     public function getMargemLucro()
     {
-        # code...
+        return (($this->preco_venda - $this->preco_custo) / $this->preco_custo) * 100;
     }
 
-    public function registraCompra()
+    public function registraCompra($custo, $quantidade)
     {
-        # code...
+        $this->custo = $custo;
+        $this->estoque += $quantidade;
     }
-
 }
