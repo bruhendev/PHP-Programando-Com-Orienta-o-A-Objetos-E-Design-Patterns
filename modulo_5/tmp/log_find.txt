@@ -1,0 +1,1 @@
+2021-11-25 12:37:52 :SELECT * FROM produto WHERE id=5

@@ -11,9 +11,27 @@ try {
 
     $produtos = Produto::all();  
 
-    foreach($produtos as $produto){
-       $produto->delete();
-    }
+    // foreach($produtos as $produto){
+    //    $produto->delete();
+    // }
+
+    // $produto = new Produto();
+
+    // $produto->descricao = 'Vinho';
+    // $produto->estoque = 8;
+    // $produto->preco_custo = 12;
+    // $produto->preco_venda = 18;
+    // $produto->codigo_barras = '123123132456';
+    // $produto->data_cadastro = date('Y-m-d');
+    // $produto->origem = 'N';
+
+    $outo = Produto::find(1);
+
+    echo '<pre>';
+    var_dump($outo);
+    $outo->registraCompra(14, 5);
+    $outo->save();
+    var_dump($outo);
 
     // $data = new stdClass;
 

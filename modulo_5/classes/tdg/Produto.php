@@ -21,7 +21,7 @@ class Produto
     public static function find($id)
     {
         $gw = new ProdutoGateway;
-        return $gw->find($id);
+        return $gw->find($id, 'Produto');
     }
 
     public static function all($filter = false)
@@ -49,7 +49,7 @@ class Produto
 
     public function registraCompra($custo, $quantidade)
     {
-        $this->custo = $custo;
+        $this->preco_custo = $custo;
         $this->estoque += $quantidade;
     }
 }

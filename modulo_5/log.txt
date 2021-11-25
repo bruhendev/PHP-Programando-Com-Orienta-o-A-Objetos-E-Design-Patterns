@@ -1,0 +1,12 @@
+2021-11-21 21:45:31 :INSERT INTO produto
+                (id, descricao, estoque, preco_custo, preco_venda, codigo_barras, 
+                 data_cadastro, origem)
+            VALUES
+                ('5',
+                 'Feijão',
+                 '380',
+                 '4',
+                 '7',
+                 '12312731323721',
+                 '2021-11-21',
+                 'N')

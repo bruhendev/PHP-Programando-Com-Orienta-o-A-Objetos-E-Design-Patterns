@@ -1,0 +1,1 @@
+2021-11-25 15:27:13 :SELECT * FROM produto WHERE (estoque > 10 and origem = 'N')2021-11-25 15:27:13 :SELECT count(*) FROM produto WHERE (estoque > 10 and origem = 'N')

@@ -1,0 +1,1 @@
+2021-11-25 12:30:11 :SELECT max(id) FROM produto2021-11-25 12:30:11 :INSERT INTO produto(descricao, estoque, preco_custo, preco_venda, codigo_barras, origem, id) values ('Cerveja Artesanal IPA', 50, 8, 12, '123468494656', 'N', 6)
